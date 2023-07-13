@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'Copyright', :text => 'Copyright 2021 Google' }
   s.authors      = "Google Inc."
   s.platform     = :ios, '10.0'
-  s.source       = { :http => 'http://dummy' }
+  s.source       = { :http => 'https://dummy' }
   s.module_name = "GoogleMaps"
   s.default_subspecs = "Maps"
 
@@ -25,6 +25,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Maps' do |sp|
     sp.dependency 'GoogleMaps/Base'
+    sp.resources = "GoogleMaps/GoogleMaps.xcframework/ios-arm64_armv7/GoogleMaps.framework/Resources/GoogleMaps.bundle"
     sp.ios.vendored_frameworks = "GoogleMaps/GoogleMaps.xcframework", "GoogleMapsCore/GoogleMapsCore.xcframework"
     sp.frameworks   =  "Accelerate", "CoreImage", "CoreTelephony", "CoreText", "GLKit", "ImageIO", "Metal", "OpenGLES", "QuartzCore"
   end
